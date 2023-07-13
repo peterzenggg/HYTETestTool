@@ -1,0 +1,36 @@
+﻿<Page x:Class="HYTETestTool.ControlPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800" Background="DarkGray"
+      Title="ControlPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <!-- 第一行高度為自適應內容 -->
+            <RowDefinition Height="*" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <!-- 第二行高度為剩餘空間 -->
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" >
+                <Label Content="SN    FGQ60BNLAPKCN" FontSize="20" FontWeight="Bold"></Label>
+                <TextBox x:Name="InputTb" Width="150" Height="30" MaxLength="8" Background="DimGray" TextAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" FontWeight="Bold" TextChanged="TextBox_TextChanged"></TextBox>
+                <Label Content="-0000" FontSize="20" FontWeight="Bold"></Label>
+                <Button x:Name="WriteBtn" Content="寫入" Margin="0,0,0,0" Width="70" Background="DimGray" FontSize="20" FontWeight="Bold" Click="WriteBtn_Click" ></Button>
+            </StackPanel>
+        </StackPanel>
+        <Line Grid.Row="2" X1="0" Y1="0" X2="800" Y2="0" Stroke="DimGray" StrokeThickness="5" />
+        <StackPanel Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical">
+            <StackPanel HorizontalAlignment="Left" Orientation="Horizontal">
+                <Label Content="SN" FontSize="20" FontWeight="Bold" Width="50" Margin="20,20,0,0"></Label>
+                <TextBlock x:Name="SNTB" Text="" TextWrapping="Wrap" Background="DimGray" Width="454" Height="80" FontSize="20"></TextBlock>
+            </StackPanel>
+            <Button x:Name="ResetBtn" Content="清除SN" Margin="0,30,400,0" Width="150" Height="50" Background="DimGray" FontSize="20" FontWeight="Bold" Click="ResetBtn_Click"></Button>
+        </StackPanel>
+    </Grid>
+</Page>
